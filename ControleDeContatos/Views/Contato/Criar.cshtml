@@ -1,0 +1,56 @@
+﻿@model ContatoModel
+
+<div class="text-center">
+
+
+    <h1 class="display-1">Criar Contato</h1>
+    
+</div>
+
+
+<form asp-controller="Contato" asp-action="Criar" method="post">
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Digite sua Idade</label>
+        <input type="number" asp-for="Idade" class="form-control" id="exampleInputPassword1" placeholder="Digite sua Idade...">
+        @Html.ValidationMessageFor(x => x.Idade)
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Nacionalidade</label>
+        <input type="text" asp-for="Nacionalidade" class="form-control" id="exampleInputPassword1" placeholder="Digite sua Nacionalidade...">
+        @Html.ValidationMessageFor(x => x.Nacionalidade)
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Numero de telefone</label>
+        <input type="tel" asp-for="Celular" class="form-control" id="exampleInputPassword1" placeholder="Digite o numero de telefone...">
+        @Html.ValidationMessageFor(x => x.Celular)
+    </div>
+
+    <br />
+
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Termos de uso</label>
+        
+    <br />
+
+        <div class="container">
+            <div class="btn-group">
+                <button type="submit" class="btn btn-outline-primary btn-lg">Adicionar</button>
+                <button role="button" asp-controller="Contato" asp-action="Index" class="btn btn-outline-danger btn-lg">Retornar</button>
+            </div>
+        </div>
+
+        <br />
+
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: ;
+                height: 5vh;0
+            }
+        </style>
+</form>

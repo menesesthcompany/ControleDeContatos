@@ -1,0 +1,54 @@
+﻿@model ContatoModel
+
+<div class="text-center">
+
+
+    <h3 class="display-4">Editar Contato</h3>
+
+</div>
+
+
+<form asp-controller="Contato" asp-action="Editar" method="post">
+
+    <input type="hidden" asp-for="id"/>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Digite sua Idade</label>
+        <input type="number" asp-for="Idade" class="form-control" id="exampleInputPassword1" placeholder="Digite sua Idade...">
+        @Html.ValidationMessageFor(x => x.Idade)
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Nacionalidade</label>
+        <input type="text" asp-for="Nacionalidade" class="form-control" id="exampleInputPassword1" placeholder="Digite sua Nacionalidade...">
+        @Html.ValidationMessageFor(x => x.Nacionalidade)
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Numero de telefone</label>
+        <input type="tel" asp-for="Celular" class="form-control" id="exampleInputPassword1" placeholder="Digite o numero de telefone...">
+        @Html.ValidationMessageFor(x => x.Celular)
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Termos de uso</label>
+
+        <br />
+
+        <div class="container">
+            <div class="btn-group">
+                <button role="button" class="btn btn-outline-primary">Editar</button>
+                <button role="button" asp-controller="Contato" asp-action="" class="btn btn-outline-danger">Retornar</button>
+            </div>
+        </div>
+
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items:;
+                height: 5vh;
+                0
+            }
+        </style>
+</form>

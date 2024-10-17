@@ -1,0 +1,74 @@
+﻿@using ControleDeContatos.Enuns
+@model UsuarioModel
+
+<div class="text-center">
+
+
+    <h1 class="display-1">Criar Usuario</h1>
+
+</div>
+
+
+<form asp-controller="Usuario" asp-action="CriarUsuario" method="post">
+
+    
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" id="exampleInputPassword1" placeholder="Digite seu Nome...">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input type="email" asp-for="Email" class="form-control" id="exampleInputPassword1" placeholder="Digite seu Email...">
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Login</label>
+        <input type="text" asp-for="Login" class="form-control" id="exampleInputPassword1" placeholder="Digite seu Login...">
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Perfil</label>
+        <select asp-for="Perfil" class="form-control">
+            <option value="">Selecione</option>
+            <option value="@PerfilEnum.admin">Admin</option>
+            <option value="@PerfilEnum.padrao">Padrão</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Senha</label>
+        <input type="password" asp-for="Senha" class="form-control" id="exampleInputPassword1" placeholder="Digite sua Senha...">
+        @Html.ValidationMessageFor(x => x.Senha)
+    </div>
+
+
+
+    <br />
+
+    <br />
+
+    <div class="container">
+        <div class="btn-group">
+            <button type="submit" class="btn btn-outline-primary btn-lg">Criar Usuario</button>
+            <button role="button" asp-controller="Usuario" asp-action="Index" class="btn btn-outline-danger btn-lg">Retornar</button>
+        </div>
+    </div>
+
+    <br />
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items:;
+            height: 5vh;
+            0
+        }
+    </style>
+</form>
